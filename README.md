@@ -1,0 +1,2 @@
+# fullstack-developer-infloso
+ This assignment assesses your proficiency in developing secure and efficient app using ReactJS, Node.js and JWT authentication. You'll create a robust frontend and backend for a web application's login and signup functionality, adhering to best practices. You will showcase your expertise in creating responsive and user-friendly screens by applying React concepts and best practices.
