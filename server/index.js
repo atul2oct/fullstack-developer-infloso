@@ -1,21 +1,31 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-// const database = require('./config/database')
-const cookieParser = require('cookie-parser')
+// routes
+const userRoutes = require('./routes/user');
 
-const cors = require('cors')//front end ki request ko backend entertain kre
-require('dotenv').config()
+const database = require('./config/database');
+const cookieParser = require('cookie-parser');
 
-const PORT = process.env.PORT || 4000 
+
+const cors = require('cors');//front end ki request ko backend entertain kre
+require('dotenv').config();
+
+const PORT = process.env.PORT || 4000;
 
 // database connect
-// database.connect()
+database.connect();
 
 // middleware
-app.use(express.json())
-app.use(cookieParser())
-
+app.use(express.json());
+app.use(cookieParser());
+app.use(
+    cors({
+        // origin: 'http://localhost:5173', // frontend link
+        origin: "*",
+        credentials: true
+    })
+);
 // const allowedOrigins = [
 //     "https://study-notion-ed-tech-project-rosy.vercel.app",
 //     "https://study-notion-ed-tech-project-9aaemlo9o-atuls-projects-ec02cbcd.vercel.app",
@@ -38,17 +48,15 @@ app.use(cookieParser())
 
 
 // routes
-
-// http://localhost:4000/api/v1/course
-
+app.use('/api/v1/auth', userRoutes);
 // default route
 app.get("/",(req,res)=>{
     return res.json({
         success:true,
         message:"server is up and running..."
     })
-})
+});
 
 app.listen(PORT,()=>{
     console.log(`App is running at port no.: ${PORT}`)
-})
+});
