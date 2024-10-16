@@ -43,6 +43,14 @@
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git clone https://github.com/your-repo/melodyverse.git
    cd connectverse-authentication
+    ```
+2. Install dependencies for both the frontend and backend:
+    ```bash
+   npm install
+    ```
+3. Start the frontend and backend server at same time (concurrently):
+    ```bash
+   npm run dev
     ```
