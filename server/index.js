@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
-    'https://fullstack-developer-infloso.vercel.app/',
-    'https://fullstack-developer-infloso-git-main-atuls-projects-ec02cbcd.vercel.app/',
+    'https://fullstack-developer-infloso.vercel.app',
+    'https://fullstack-developer-infloso-git-main-atuls-projects-ec02cbcd.vercel.app',
 ];
 
 app.use(
