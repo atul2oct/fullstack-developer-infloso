@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CardHomePage from '../components/common/CardHomePage';
+import Footer from '../components/common/Footer';
 
 const Home = () => {
     return (
@@ -36,11 +37,7 @@ const Home = () => {
             </section>
 
             {/* Footer Section */}
-            <footer className="bg-gray-800 text-white py-4">
-                <div className="container mx-auto text-center">
-                    <p>&copy; {new Date().getFullYear()} Connectverse. All rights reserved.</p>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     );
 };

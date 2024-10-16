@@ -3,6 +3,7 @@ const app = express();
 
 // routes
 const userRoutes = require('./routes/user');
+const contactUsRoute = require("./routes/contact");
 
 const database = require('./config/database');
 const cookieParser = require('cookie-parser');
@@ -39,7 +40,12 @@ app.use(
     })
 );
 
-
+// app.use(
+//     cors({//deep dive why credentials:true ?
+//         origin: "*",
+//         credentials:true,            //access-control-allow-credentials:true
+//     })
+// )
 // Rate Limiting Middleware
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -52,6 +58,8 @@ app.use(limiter);
 
 // routes
 app.use('/api/v1/auth', userRoutes);
+app.use('/api/v1/reach', contactUsRoute);
+
 // default route
 app.get("/",(req,res)=>{
     return res.json({
