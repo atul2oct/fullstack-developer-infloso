@@ -45,13 +45,22 @@
 
 1. Clone the repository:
    ```bash
-   git clone git clone https://github.com/atul2oct/fullstack-developer-infloso.git
+        git clone git clone https://github.com/atul2oct/fullstack-developer-infloso.git
     ```
 2. Install dependencies for both the frontend and backend:
     ```bash
-   npm install
+        npm install
     ```
 3. Start the frontend and backend server at same time (concurrently):
     ```bash
-   npm run dev
+        npm run dev
+    ```
+4.Create a .env file in the server directory with the following variables:
+    ```makefile
+        PORT=4000
+        MONGODB_URI=<your-mongodb-uri>
+        JWT_SECRET=<your-jwt-secret>
+        MAIL_HOST = smtp.gmail.com
+        MAIL_USER = <your-nodemailer-email>
+        MAIL_PASS = <your-nodemailer-password>
     ```
