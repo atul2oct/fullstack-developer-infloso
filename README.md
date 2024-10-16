@@ -13,11 +13,11 @@
 - **Password Hashing**: User passwords are securely hashed using bcrypt.
 - **JWT Authentication**: Utilizes JWT for secure authentication and protects routes.
 - **Rate Limiting**: Implements rate limiting to protect against brute-force attacks, limiting the number of requests from a single IP address.
+- **OTP Verification**: Generates and sends OTPs for user verification during signup or password reset using `otp-generator` and `nodemailer`.
 - **Responsive Design**: Built with Tailwind CSS for a visually appealing and responsive UI that works across devices (desktop, tablet, mobile).
 - **Input Validation**: Includes input validation to prevent invalid data entry.
 - **User-Friendly Messages**: Provides clear error and success messages for user actions.
 - **Forgot Password Functionality**: Basic implementation for users to initiate password recovery.
-- **Terms and Conditions**: Users must agree to the terms and conditions during signup.
 
 ## Technology Stack
 
@@ -25,6 +25,8 @@
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT (jsonwebtoken library)
+- **Email Sending**: nodemailer
+- **OTP Generation**: otp-generator
 - **Middleware**: express-rate-limit for rate limiting
 
 ## API Endpoints
@@ -43,8 +45,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone git clone https://github.com/your-repo/melodyverse.git
-   cd connectverse-authentication
+   git clone git clone https://github.com/atul2oct/fullstack-developer-infloso.git
     ```
 2. Install dependencies for both the frontend and backend:
     ```bash
