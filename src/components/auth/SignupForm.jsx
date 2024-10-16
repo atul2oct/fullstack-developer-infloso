@@ -59,7 +59,7 @@ const SignupForm = () => {
       onSubmit={handleOnSubmit}>
 
         {/* Name */}
-        <div className='flex gap-x-4'>
+        <div className='flex flex-col md:flex-row gap-y-4 md:gap-x-4'>
           <label>
             <p className='text-richblack-5 text-sm mb-1'>First Name<sup className='text-pink-200'>*</sup></p>
             <input
@@ -100,7 +100,7 @@ const SignupForm = () => {
         </label>
 
         {/* password */}
-        <div className='flex gap-x-4'>
+        <div className='flex flex-col md:flex-row gap-y-4 md:gap-x-4'>
 
           <label className='relative'>
             <p className='text-richblack-5 mb-1 text-sm'>
