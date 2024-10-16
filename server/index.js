@@ -19,30 +19,24 @@ database.connect();
 // middleware
 app.use(express.json());
 app.use(cookieParser());
+
+const allowedOrigins = [
+    process.env.FRONE_END_URL_1 ,
+    process.env.FRONE_END_URL_2 ,
+];
+
 app.use(
     cors({
-        // origin: 'http://localhost:5173', // frontend link
-        origin: "*",
-        credentials: true
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+                callback(null, origin); // Allow the request
+            } else {
+                callback(new Error('Not allowed by CORS')); // Reject the request
+            }
+        },
+        credentials: true,
     })
 );
-// const allowedOrigins = [
-//     "https://study-notion-ed-tech-project-rosy.vercel.app",
-//     "https://study-notion-ed-tech-project-9aaemlo9o-atuls-projects-ec02cbcd.vercel.app",
-// ];
-
-// app.use(
-//     cors({
-//         origin: function (origin, callback) {
-//             if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//                 callback(null, origin); // Allow the request
-//             } else {
-//                 callback(new Error('Not allowed by CORS')); // Reject the request
-//             }
-//         },
-//         credentials: true,
-//     })
-// );
 
 
 
